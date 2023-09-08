@@ -1,0 +1,21 @@
+<!-- Include Header partial -->
+<%- include("partials/header.ejs")%>
+
+<!-- Main body -->
+<div class="list-title">
+    <h2>Work List</h2>
+</div>
+<% if (locals.toDoWork) { %>
+  <% for (var i = 0; i < toDoWork.length; i++) { %>
+        <div class="list-display">
+          <input type="checkbox" name="checkbox"><span class="list-item"><%= toDoWork[i]%></span>
+          </div>
+      <% } %>
+  <% } %>
+<form action="/addtaskwork" method="post">
+  <input type="text" name="list-item-work" placeholder="Type something">
+  <button type="submit" name="list"><i class="fa-solid fa-plus"></i></button>
+</form>
+
+<!-- Include Footer Partial -->
+<%- include("partials/footer.ejs")%>

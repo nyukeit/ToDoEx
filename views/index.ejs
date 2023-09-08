@@ -1,0 +1,23 @@
+<!-- Include Header partial -->
+<%- include("partials/header.ejs")%>
+
+<!-- Main body -->
+<div class="list-title">
+  <% if (locals.today && locals.month) { %>
+    <h2><%= today %>, <%= month %> <%= new Date().getDate() %></h2>
+  <% } %>
+</div>
+  <% if (locals.toDoList) { %>
+    <% for (var i = 0; i < toDoList.length; i++) { %>
+          <div class="list-display">
+            <input type="checkbox" name="checkbox" class="checkbox"><span class="list-item"><%= toDoList[i]%></span>
+            </div>
+        <% } %>
+    <% } %>
+<form action="/addtask" method="POST">
+  <input type="text" name="list-item" placeholder="Type something">
+  <button type="submit" name="list"><i class="fa-solid fa-plus"></i></button>
+</form>
+
+<!-- Include Footer Partial -->
+<%- include("partials/footer.ejs")%>
