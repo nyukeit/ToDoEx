@@ -1,8 +1,16 @@
 body {
-  width: 100%;
-  text-align: center;
+  /* width: 100%;
+  text-align: center; */
   font-family: 'Work Sans', sans-serif;
   margin: 0px;
+  background: #DE6262;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FFB88C, #DE6262);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FFB88C, #DE6262); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.list-title {
+  width: 100%;
+  text-align: center;
 }
 
 footer {
@@ -12,13 +20,19 @@ footer {
   text-align: center;
 }
 
+.navitem {
+  padding: 20px;
+}
+
 nav {
   display: inline-block;
   padding: 10px;
+  text-align: left;
 }
 
 a {
   text-decoration: none;
+  color: black;
 }
 
 .icon {
@@ -29,6 +43,45 @@ input:checked + span {
   text-decoration: line-through;
 }
 
-.checkbox {
-  padding: 10px;
+.list-display {
+  background-color: azure;
+  width: 30%;
+  margin: auto;
+  /* padding: 1rem; */
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.list-box {
+  padding: 20px;
+  border-bottom: gainsboro solid 1px;
+}
+
+.list-item {
+  margin-left: 10px;
+  padding-left: 10px;
+}
+
+.add-button {
+  border-radius: 100%;
+  background-color: #DE6262;
+  border: none;
+}
+
+.add-icon {
+  font-size: 1.3rem;
+  padding: 5px;
+  color: azure;
+}
+
+input[type=text] {
+  padding: 20px;
+  background-color: azure;
+  border: none;
+  border-bottom-left-radius: 10px;
+}
+
+input:focus {
+  outline: none;
 }

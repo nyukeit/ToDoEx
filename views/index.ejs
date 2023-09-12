@@ -7,17 +7,19 @@
     <h2><%= today %>, <%= month %> <%= new Date().getDate() %></h2>
   <% } %>
 </div>
+<div class="list-display">
   <% if (locals.toDoList) { %>
     <% for (var i = 0; i < toDoList.length; i++) { %>
-          <div class="list-display">
+          <div class="list-box">
             <input type="checkbox" name="checkbox" class="checkbox"><span class="list-item"><%= toDoList[i]%></span>
             </div>
         <% } %>
     <% } %>
 <form action="/addtask" method="POST">
-  <input type="text" name="list-item" placeholder="Type something">
-  <button type="submit" name="list"><i class="fa-solid fa-plus"></i></button>
+  <input type="text" name="list-item" placeholder="New Task">
+  <button type="submit" name="list" class="add-button"><i class="fa-solid fa-plus add-icon"></i></button>
 </form>
+</div>
 
 <!-- Include Footer Partial -->
 <%- include("partials/footer.ejs")%>
