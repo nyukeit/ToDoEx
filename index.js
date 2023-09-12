@@ -23,28 +23,13 @@ app.post("/addtask", (req, res) => {
   res.redirect("/");
 });
 
-app.post('/', (req,res) => {
-
-  // DELETEbtn
-  if(req.body["delete"]) {
-  
-    const index = items.indexOf(req.body.delete); 
-    if (index > -1) { // only splice array when item is found
-        items.splice(index, 1);
-    }
-  }
-//items is my array where I'm storing the newly added to-do list items.
-  res.redirect('/');
-});
-
 // Render Today page with tasks added
 app.get("/", (req, res) => {
   const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   const currentDay = dayNames[new Date().getDay()];
   const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   const currentMonth = monthNames[new Date().getMonth()];
-  const toDoListCount = toDoList.length;
-  res.render("index.ejs", { today: currentDay, month: currentMonth, toDoList: toDoList, toDoListCount: toDoListCount });
+  res.render("index.ejs", { today: currentDay, month: currentMonth, toDoList: toDoList });
 });
 
 // Add task route for Work page
@@ -57,8 +42,7 @@ app.post("/addtaskwork", (req, res) => {
 
 // Render Work page with tasks added
 app.get("/work", (req, res) => {
-  const toDoWorkCount = toDoWork.length;
-  res.render("work.ejs", { toDoWork: toDoWork, toDoWorkCount: toDoWorkCount });
+  res.render("work.ejs", { toDoWork: toDoWork});
 });
 
 // Open port for app

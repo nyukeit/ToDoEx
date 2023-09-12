@@ -5,7 +5,8 @@
 <!-- Date as the title -->
 <div class="list-title">
   <% if (locals.today && locals.month) { %>
-    <h2><%= today %>, <%= month %> <%= new Date().getDate() %> (<%=toDoListCount%>)</h2>
+    <h1>A Really Simple To-Do</h1>
+    <h2><%=today%>, <%=month%> <%=new Date().getDate()%></h2>
   <% } %>
 </div>
 <!-- Outer container for the list -->
@@ -15,15 +16,18 @@
       <!-- This is the individual list box -->
       <div class="list-box">
         <input type="checkbox" name="checkbox" class="checkbox"><span class="list-item"><%= toDoList[i]%></span>
-        <button class="deleteItemBtn" type="submit" name="delete" value="<%= toDoList[i] %>">x</button>
       </div>
     <% } %>
   <% } %>
   <!-- Add task action is done using this form -->
-<form action="/addtask" method="POST">
-  <input type="text" name="list-item" placeholder="Type something & press ↵ Enter">
-  <button type="submit" name="list" class="add-button"><i class="fa-solid fa-plus add-icon"></i></button>
-</form>
+    <form action="/addtask" method="POST" class="form-input-div">
+      <div class="input-field-div">
+        <input type="text" name="list-item" placeholder="Type something & press ↵ Enter">
+      </div>
+      <div class="btn-div">
+        <button type="submit" name="list" class="add-button"><i class="fa-solid fa-plus add-icon"></i></button>
+      </div>
+    </form>
 </div>
 
 <!-- Include Footer Partial -->
