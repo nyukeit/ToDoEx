@@ -2,21 +2,32 @@
 <%- include("partials/header.ejs")%>
 
 <!-- Main body -->
+<!-- "Work" as list title -->
 <div class="list-title">
+    <h1>A Really Simple To-Do</h1>
     <h2>Work List</h2>
 </div>
+
+<!-- Outer container for the list -->
 <div class="list-display">
   <% if (locals.toDoWork) { %>
     <% for (var i = 0; i < toDoWork.length; i++) { %>
+          <!-- This is the individual list box -->
           <div class="list-box">
             <input type="checkbox" name="checkbox"><span class="list-item"><%= toDoWork[i]%></span>
             </div>
         <% } %>
     <% } %>
-  <form action="/addtaskwork" method="post">
-    <input type="text" name="list-item-work" placeholder="New Task">
-    <button type="submit" name="list" class="add-button"><i class="fa-solid fa-plus add-icon"></i></button>
-  </form>
+  
+  <!-- Add task action is done using this form -->
+    <form action="/addtaskwork" method="post" class="form-input-div">
+      <div class="input-field-div">
+        <input type="text" name="list-item-work" placeholder="Type something & press ↵ Enter">
+      </div>
+      <div class="btn-div">
+        <button type="submit" name="list" class="add-button"><i class="fa-solid fa-plus add-icon"></i></button>
+      </div>
+    </form>
 </div>
 
 <!-- Include Footer Partial -->

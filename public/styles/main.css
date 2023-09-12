@@ -1,6 +1,4 @@
 body {
-  /* width: 100%;
-  text-align: center; */
   font-family: 'Work Sans', sans-serif;
   margin: 0px;
   background: #DE6262;  /* fallback for old browsers */
@@ -14,10 +12,12 @@ body {
 }
 
 footer {
+  display: flex;
   position: absolute;
   bottom: 0;
-  width: 100%;
-  text-align: center;
+  align-items: center;
+  justify-content: start;
+  padding: 20px;
 }
 
 .navitem {
@@ -47,10 +47,7 @@ input:checked + span {
   background-color: azure;
   width: 30%;
   margin: auto;
-  /* padding: 1rem; */
   border-radius: 10px;
-  margin-bottom: 20px;
-  text-align: left;
 }
 
 .list-box {
@@ -60,18 +57,20 @@ input:checked + span {
 
 .list-item {
   margin-left: 10px;
-  padding-left: 10px;
 }
 
 .add-button {
+  height: 2em;
+  width: 2em;
   border-radius: 100%;
   background-color: #DE6262;
   border: none;
+  cursor: pointer;
 }
 
 .add-icon {
-  font-size: 1.3rem;
-  padding: 5px;
+  font-size: 0.8em;
+  padding: 0.2em;
   color: azure;
 }
 
@@ -79,9 +78,30 @@ input[type=text] {
   padding: 20px;
   background-color: azure;
   border: none;
+  border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+  width: 100%;
+}
+
+.form-input-div {
+  display: flex;
+}
+
+.input-field-div {
+  flex: 1;
+}
+
+.btn-div {
+  display: flex;
+  width: 10%;
+  align-items: center;
+  justify-content: center;
 }
 
 input:focus {
   outline: none;
+}
+
+.social-links {
+  margin-left: 30px;
 }
