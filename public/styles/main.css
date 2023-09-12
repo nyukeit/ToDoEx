@@ -47,7 +47,7 @@ input:checked + span {
   background-color: azure;
   width: 30%;
   margin: auto;
-  /* padding: 1rem; */
+  padding: 1rem;
   border-radius: 10px;
   margin-bottom: 20px;
   text-align: left;
@@ -60,13 +60,13 @@ input:checked + span {
 
 .list-item {
   margin-left: 10px;
-  padding-left: 10px;
 }
 
 .add-button {
   border-radius: 100%;
   background-color: #DE6262;
   border: none;
+  cursor: pointer;
 }
 
 .add-icon {
@@ -76,12 +76,18 @@ input:checked + span {
 }
 
 input[type=text] {
+  width: 80%;
   padding: 20px;
   background-color: azure;
   border: none;
+  border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
 
 input:focus {
   outline: none;
+}
+
+.blankTaskError {
+  margin: 20px;
 }
